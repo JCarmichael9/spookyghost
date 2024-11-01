@@ -1,153 +1,206 @@
+/* Basic styling for the body */
 body {
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background: black;
+    overflow: hidden; /* Prevents scrolling */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0; /* Remove default margin */
+    background: black; /* Black background */
 }
 
+/* Container for the spooky character */
 #container {
-    width: 400px;
-    height: 400px;
-    padding: 0;
-    box-sizing: border-box;
-    background: black;
+    width: 400px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    padding: 0; /* No padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    background: black; /* Black background for the container */
 }
 
+/* Inherit box-sizing for all elements */
 *:after,
 *:before {
     box-sizing: inherit;
 }
 
+/* Spooky character styling */
 #spooky {
-    margin: 10% auto;
-    width: 80%;
-    height: 80%;
-    animation: floaty 5s infinite;
+    margin: 10% auto; /* Center with margin from the top */
+    width: 80%; /* Responsive width */
+    height: 80%; /* Responsive height */
+    animation: floaty 5s infinite; /* Floating animation */
+    transition: 0.5s;
 }
 
+/* Main body of the spooky character */
 #spooky #body {
-    position: relative;
-    margin: 50px auto 0;
-    width: 180px;
-    height: 220px;
-    background: red;
-    border-top-left-radius: 90px;
-    border-top-right-radius: 90px;
+    position: relative; /* Position relative for absolute children */
+    margin: 50px auto 0; /* Center with top margin */
+    width: 180px; /* Fixed width */
+    height: 220px; /* Fixed height */
+    background: red; /* Red body */
+    border-top-left-radius: 90px; /* Rounded top left corner */
+    border-top-right-radius: 90px; /* Rounded top right corner */
 }
 
+/* Add "arms" to the spooky character */
 #spooky #body:before,
 #spooky #body:after {
-    content: '';
-    position: absolute;
-    top: 130px;
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: blue;
-    animation: floaty 5s infinite;
+    content: ''; /* Empty content for pseudo-elements */
+    position: absolute; /* Position relative to the body */
+    top: 130px; /* Position from the top */
+    display: inline-block; /* Inline block display */
+    width: 36px; /* Fixed width for arms */
+    height: 36px; /* Fixed height for arms */
+    border-radius: 50%; /* Round arms */
+    background: blue; /* Blue arms */
+    animation: floaty 5s infinite; /* Floating animation */
 }
 
+/* Position left arm */
 #spooky #body:before {
-    left: -18px;
+    left: -18px; /* Shift to the left */
 }
 
+/* Position right arm */
 #spooky #body:after {
-    right: -18px;
+    right: -18px; /* Shift to the right */
 }
 
+/* Eyes of the spooky character */
 #spooky #body #eyes {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 90px 0 0;
-    width: 90px;
-    height: 20px;
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-between; /* Space out eyes */
+    margin: 0 auto; /* Center eyes */
+    padding: 90px 0 0; /* Top padding */
+    width: 90px; /* Fixed width for eyes */
+    height: 20px; /* Fixed height for eyes */
 }
 
+/* Styling for each eye */
 #spooky #body #eyes:before,
 #spooky #body #eyes:after {
-    content: ' ';
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: green;
-    border-radius: 50%;
+    content: ' '; /* Empty content for eyes */
+    display: block; /* Block display */
+    width: 30px; /* Fixed width for eyes */
+    height: 30px; /* Fixed height for eyes */
+    background: green; /* Green eyes */
+    border-radius: 50%; /* Round eyes */
 }
 
+/* Mouth of the spooky character */
 #spooky #body #mouth {
-    background: #252c49;
-    margin: 25px auto 0;
-    width: 60px;
-    height: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    background: #252c49; /* Dark background for mouth */
+    margin: 25px auto 0; /* Center mouth with top margin */
+    width: 60px; /* Fixed width */
+    height: 30px; /* Fixed height */
+    border-bottom-left-radius: 30px; /* Rounded bottom left corner */
+    border-bottom-right-radius: 30px; /* Rounded bottom right corner */
 }
 
+/* Add a "tongue" to the mouth */
 #spooky #body #mouth:before {
-    content: ' ';
-    display: block;
-    background: pink;
-    margin-left: 20px;
-    width: 10px;
-    height: 10px;
+    content: ' '; /* Empty content for tongue */
+    display: block; /* Block display */
+    background: pink; /* Pink tongue */
+    margin-left: 20px; /* Margin from the left */
+    width: 10px; /* Fixed width for tongue */
+    height: 10px; /* Fixed height for tongue */
 }
 
+/* Feet of the spooky character */
 #spooky #body #feet {
-    position: absolute;
-    display: flex;
-    bottom: -18px;
-    width: 180px;
-    height: 36px;
+    position: absolute; /* Position absolute to the body */
+    display: flex; /* Flexbox for alignment */
+    bottom: -18px; /* Position from the bottom */
+    width: 180px; /* Fixed width */
+    height: 36px; /* Fixed height */
 }
 
+/* Styling for the feet */
 #spooky #body #feet > *,
 #spooky #body #feet::before,
 #spooky #body #feet::after {
-    content: ' ';
-    width: 36px;
-    height: 36px;
-    background: brown;
-    border-radius: 50%;
+    content: ' '; /* Empty content for feet */
+    width: 36px; /* Fixed width for feet */
+    height: 36px; /* Fixed height for feet */
+    background: brown; /* Brown feet */
+    border-radius: 50%; /* Round feet */
 }
 
+/* Shadow under the character */
 #shadow {
-    margin: -90px auto 0;
-    background: beige;
-    width: 180px;
-    height: 40px;
-    border-radius: 50%;
-    animation: zoomy 5s infinite;
+    margin: -60px auto 0; /* Center and position shadow */
+    background: beige; /* Beige shadow */
+    width: 180px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    border-radius: 50%; /* Round shadow */
+    animation: zoomy 5s infinite; /* Zooming animation */
+    transition: 0.5s;
 }
 
-#container:hover {
-opacity: 0;
-visibility: hidden;
+/* Hide spooky character and shadow on hover */
+#container:hover #spooky {
+    opacity: 0; /* Fade out spooky character */
+    visibility: hidden; /* Hide from layout */
+    transition: 0.5s;
 }
 
+#container:hover #shadow {
+    opacity: 0; /* Fade out shadow */
+    visibility: hidden; /* Hide from layout */
+    transition: 0.5s;
+}
 
-
+/* Floating animation keyframes */
 @keyframes floaty {
     0%, 100% {
-        transform: translateY(0);
+        transform: translateY(0); /* Start and end at original position */
     }
 
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-20px); /* Float up */
     }
 }
 
+/* Zooming animation keyframes */
 @keyframes zoomy {
     0%, 100% {
-        transform: scale(1);
+        transform: scale(1); /* Start and end at original size */
     }
 
     50% {
-        transform: scale(0.8);
+        transform: scale(0.8); /* Zoom out */
     }
 }
 
+/* Show text on hover */
+#container:hover #textwhere {
+    opacity: 1; /* Fade in text */
+    visibility: visible; /* Make text visible */
+    color: white; /* White text color */
+}
+
+/* Initial state for the text */
+#textwhere {
+    text-align: center; /* Center text */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+}
+
+/* Hide hover text on hover */
+#container:hover #texthoverme {
+    text-align: center; /* Center text */
+    visibility: hidden; /* Hide text */
+    opacity: 0; /* Fade out */
+}
+
+/* Initial state for hover text */
+#texthoverme {
+    opacity: 1; /* Initially visible */
+    visibility: visible; /* Make text visible */
+    color: white; /* White text color */
+    text-align: center; /* Center text */
+}
