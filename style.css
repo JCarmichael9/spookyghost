@@ -124,6 +124,13 @@ body {
     animation: zoomy 5s infinite;
 }
 
+#container:hover {
+opacity: 0;
+visibility: hidden;
+}
+
+
+
 @keyframes floaty {
     0%, 100% {
         transform: translateY(0);
@@ -143,3 +150,4 @@ body {
         transform: scale(0.8);
     }
 }
+
